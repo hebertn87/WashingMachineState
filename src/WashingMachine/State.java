@@ -1,6 +1,7 @@
+//Nathan Hebert 3/7/2018
 package WashingMachine;
 
-public class State {
+public interface State {
 	public void insertQuarter();
 	public void ejectQuarter();
 	public void startLoad();
