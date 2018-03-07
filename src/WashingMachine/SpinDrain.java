@@ -9,29 +9,29 @@ public class SpinDrain implements State {
 		this.washingMachine = washingMachine;
 	}
 	
-	@Override
-	public void insertQuarter() {
-		// TODO Auto-generated method stub
-		
-	}
+	//State code for inserting quarters
+		public void insertQuarter() {
+			System.out.println("Washing Machine is going, you cannot insert a quarter now");
+			
+		}
 
-	@Override
-	public void ejectQuarter() {
-		// TODO Auto-generated method stub
-		
-	}
+		//State code for ejecting quarters
+		public void ejectQuarter() {
+			System.out.println("Washing Machine is going, you cannot eject a quarter now");		
+		}
 
-	@Override
-	public void startLoad() {
-		// TODO Auto-generated method stub
-		
-	}
+		//State code for starting loads
+		public void startLoad() {
+			System.out.println("Wash now finished, have a nice day!");
+			washingMachine.setState(washingMachine.getNotFullyPaid());
+		}
 
-	@Override
-	public void cancel() {
-		// TODO Auto-generated method stub
-		
-	}
+		//State code for canceling wash
+		public void cancel() {
+			System.out.println("Wash canceled, please insert new quarters.");
+			washingMachine.setState(washingMachine.getNotFullyPaid());
+
+		}
 
 	@Override
 	public void exception() {

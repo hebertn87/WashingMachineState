@@ -10,8 +10,7 @@ public class WashingMachine {
 	State spinDrain;
 	State outOfOrder;
 	
-	State state = notFullyPaid;
-	int count = 0;
+	State state;
  
 	public WashingMachine() {
 		notFullyPaid = new NotFullyPaid(this);
@@ -19,6 +18,8 @@ public class WashingMachine {
 		rinse = new Rinse(this);
 		wash = new Wash(this);
 		spinDrain = new SpinDrain(this);
+		
+		state = notFullyPaid;
 	}
 	
 	void setState(State state) {

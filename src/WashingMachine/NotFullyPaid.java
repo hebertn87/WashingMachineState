@@ -18,12 +18,11 @@ public class NotFullyPaid implements State {
 		System.out.println("You haven't inserted a quarter");
 	}
 
-	@Override
+
 	public void startLoad() {
 		System.out.println("You can't start if you haven't inserted a quarter");	
 	}
 
-	@Override
 	public void cancel() {
 		System.out.println("You can't cancel if it's not started yet");	
 	}

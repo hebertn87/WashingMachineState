@@ -9,34 +9,32 @@ public class Wash implements State{
 		this.washingMachine = washingMachine;
 	}
 	
-	@Override
+	//State code for inserting quarters
 	public void insertQuarter() {
-		// TODO Auto-generated method stub
+		System.out.println("Washing Machine is going, you cannot insert a quarter now");
 		
 	}
 
-	@Override
+	//State code for ejecting quarters
 	public void ejectQuarter() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Washing Machine is going, you cannot eject a quarter now");		
 	}
 
-	@Override
+	//State code for starting loads
 	public void startLoad() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Spin/Drain now started");
+		washingMachine.setState(washingMachine.getSpinDrain());
 	}
 
-	@Override
+	//State code for canceling wash
 	public void cancel() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Wash canceled, please insert new quarters.");
+		washingMachine.setState(washingMachine.getNotFullyPaid());
 	}
 
-	@Override
+	//State code for out of order
 	public void exception() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
 }
