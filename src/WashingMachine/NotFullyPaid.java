@@ -4,18 +4,33 @@ package WashingMachine;
 public class NotFullyPaid implements State {
 
 	WashingMachine washingMachine;
+	int quarter = 0;
+	int quartersNeeded = 4;
 	
 	public NotFullyPaid(WashingMachine washingMachine) {
 		this.washingMachine = washingMachine;
 	}
 	
 	public void insertQuarter() {
-		System.out.println("You have inserted a quarter");
-		washingMachine.setState(washingMachine.getPaid());
+		
+		quartersNeeded--;
+		quarter++;
+		System.out.println("You have inserted " + quarter + " quarter(s). You need" + quartersNeeded + " quarters to start");
+		
+		if(quartersNeeded == 0) {
+			washingMachine.setState(washingMachine.getPaid());
+		}
 	}
 
 	public void ejectQuarter() {
+		
+		if(quarter == 0) {
 		System.out.println("You haven't inserted a quarter");
+		}
+		else if(quarter > 0){
+			quarter = 0;
+			System.out.println("You have ejected all quarters");
+		}
 	}
 
 
